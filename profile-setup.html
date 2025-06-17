@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Profile Setup – PPS One</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    main.profile-setup {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      width: 320px;
+    }
+    h1 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      text-align: center;
+      color: #333;
+    }
+    label {
+      display: block;
+      margin-top: 1rem;
+      margin-bottom: 0.3rem;
+      font-weight: bold;
+      color: #555;
+    }
+    select, input[type="file"], button {
+      width: 100%;
+      padding: 0.5rem;
+      font-size: 1rem;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+    button {
+      margin-top: 1.5rem;
+      background-color: #0078d4;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #005a9e;
+    }
+  </style>
+</head>
+<body>
+  <main class="profile-setup">
+    <h1>Set Up Your Profile</h1>
+    <form id="setupForm">
+      <label for="field">Field of Study / Profession:</label>
+      <select id="field" name="field" required>
+        <option value="" disabled selected>Select your field</option>
+        <option value="Law">Law</option>
+        <option value="Medicine">Medicine</option>
+        <option value="Engineering">Engineering</option>
+        <option value="Finance">Finance</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <label for="stage">Career Stage:</label>
+      <select id="stage" name="stage" required>
+        <option value="" disabled selected>Select your career stage</option>
+        <option value="Student">Student</option>
+        <option value="Graduate">Graduate</option>
+        <option value="Working Professional">Working Professional</option>
+      </select>
+
+      <label for="cvUpload">Upload Your CV (optional):</label>
+      <input type="file" id="cvUpload" name="cvUpload" accept=".pdf,.doc,.docx" />
+
+      <button type="submit">Finish Setup</button>
+    </form>
+  </main>
+
+  <script>
+    document.getElementById('setupForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const field = document.getElementById('field').value;
+      const stage = document.getElementById('stage').value;
+
+      // Save data locally for demo purposes (can be sent to backend instead)
+      localStorage.setItem('pps_field', field);
+      localStorage.setItem('pps_stage', stage);
+
+      // Redirect to dashboard
+      window.location.href = 'dashboard.html';
+    });
+  </script>
+</body>
+</html>

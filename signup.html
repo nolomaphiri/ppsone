@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up - PPS One</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 2rem;
+      color: #333;
+    }
+    section {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 8px;
+      max-width: 600px;
+      margin: auto;
+    }
+    .signup-btn {
+      background-color: #007bff;
+      color: white;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+    .auth-btns button {
+      margin: 0.5rem 0.5rem 1rem 0;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      border: none;
+      cursor: pointer;
+    }
+    .google { background-color: #db4437; color: white; }
+    .linkedin { background-color: #0077b5; color: white; }
+    img.section-img {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <section id="signup">
+    <img src="images\signup.jpg" alt="Sign Up" class="section-img">
+    <h2>Sign Up for PPS One</h2>
+    <div class="auth-btns">
+      <button class="google">Sign Up with Google</button>
+      <button class="linkedin">Sign Up with LinkedIn</button>
+    </div>
+    <form>
+      <input type="text" placeholder="Full Name" required><br><br>
+      <input type="email" placeholder="Email Address" required><br><br>
+      <input type="tel" placeholder="Mobile Number" required><br><br>
+      <input type="password" placeholder="Password" required><br><br>
+      <input type="password" placeholder="Confirm Password" required><br><br>
+      <select required>
+        <option value="">Select Career Stage</option>
+        <option>Student</option>
+        <option>Graduate</option>
+        <option>Professional (25–30)</option>
+      </select><br><br>
+      <label><input type="checkbox" required> I agree to the Terms & Conditions</label><br><br>
+      <button type="button" class="signup-btn" onclick="window.location.href='pps_dashboard.html'">
+  Create My PPS One Profile
+</button>
+    </form>
+    <p>Already have an account? <a href="#">Login here</a>.</p>
+  </section>
+</body>
+</html>
